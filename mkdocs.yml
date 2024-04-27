@@ -1,0 +1,67 @@
+site_name: RAG Learning
+theme:
+  name: material
+  features:
+    - navigation.expand
+    - content.code.copy
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  icon:
+    admonition:
+      info: fontawesome/solid/circle-info
+    repo: fontawesome/brands/github
+  custom_dir: doc_themes
+
+markdown_extensions:
+  - attr_list
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
+nav:
+  - 'RAG':
+      - 'Main Page': index.md
+      - 'Important': rag/important.md
+      - 'Work Flow': rag/workflow.md
+      - 'Benefits': rag/benefits.md
+      - 'Use Cases': rag/use-cases.md
+  - 'SAP':
+      - 'Introduction': sap/introduction.md
+      - 'What is new in SAP HANA Vector': sap/new_hana.md
+      - 'Save & Retrieve Embeddings in HANA': sap/save_hana.md
+      - 'RAG': sap/rag.md
+  - 'AZURE': azure/azure.md
+  - 'AWS': aws/aws.md
+  - 'GCP': gcp/wip.md
+  - 'Open Source': open-source/wip.md
+
+repo_url: https://github.com/GAmaranathaReddy/RAG-Learning
+repo_name: G AmaranathaReddy/RAG-Learning
+edit_uri: /edit/main/docs/
+
+site_url: !!python/object/apply:os.getenv ['GITHUB_PAGES_URL', '']
+
+plugins:
+  - search
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: custom
+      timezone: UTC
+      custom_format: '%Y-%m-%d %H:%M:%S %Z'
+      fallback_to_build_date: true
+  - git-authors
+  - tags:
+      tags_file: tags.md
+
+watch:
+  - 'doc_themes'
